@@ -28,6 +28,10 @@ jobs:
       TF_VAR_location: ${{ inputs.location }}
 
     steps:
+    - name: Clean Workspace
+      run: |
+        rm -rf ${{ github.workspace }}/*
+
     - name: 'Azure OIDC login'
       uses: azure/login@v1
       with:
@@ -38,10 +42,6 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Clean Workspace
-      run: |
-        rm -rf ${{ github.workspace }}/*
 
     - name: Initialize Terraform
       working-directory: ./provision
