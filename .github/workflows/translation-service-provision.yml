@@ -11,6 +11,16 @@ jobs:
   terraform:
     runs-on: self-hosted
     environment: dev
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      ARM_USE_OIDC: true
+      TF_VAR_resource_group: translation-service-uks-rg
+      TF_VAR_storage: translationserviceukssa
+      TF_VAR_appinsights: translationserviceuksai
+      TF_VAR_asp: translationserviceuksasp
+      TF_VAR_fa: translationserviceuksfa
 
     steps:
     - name: 'Azure OIDC login'
