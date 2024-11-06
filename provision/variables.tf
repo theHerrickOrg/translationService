@@ -25,3 +25,8 @@ variable "asp" {
 variable "fa" {
   type = string
 }
+
+## KV
+variable "keyvault" {
+  type = string
+}
