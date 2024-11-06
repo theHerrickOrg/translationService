@@ -1,0 +1,16 @@
+{
+  "name": "translationservice",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@azure/functions": "^4.6.0",
+    "express": "^4.21.1"
+  }
+}
