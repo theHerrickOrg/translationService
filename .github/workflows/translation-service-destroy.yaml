@@ -31,7 +31,12 @@ jobs:
 
     - name: Initialize Terraform
       working-directory: ./provision
-      run: terraform init
+      run: |
+        terraform init \
+          -backend-config="resource_group_name=theHerrickPerm" \
+          -backend-config="storage_account_name=theherrickpermsa" \
+          -backend-config="container_name=statefiles" \
+          -backend-config="key=translationService.tf" \
 
     - name: Apply Terraform changes
       working-directory: ./provision
