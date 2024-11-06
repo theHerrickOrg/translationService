@@ -37,7 +37,7 @@ jobs:
     - name: Initialize Terraform
       working-directory: ./provision
       run: |
-        terraform init -reconfigure \
+        terraform init \
           -backend-config="resource_group_name=theHerrickPerm" \
           -backend-config="storage_account_name=theherrickpermsa" \
           -backend-config="container_name=statefiles" \
