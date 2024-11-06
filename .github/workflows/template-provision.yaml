@@ -28,10 +28,6 @@ jobs:
       TF_VAR_location: ${{ inputs.location }}
 
     steps:
-    - name: Clean Workspace
-      run: |
-        rm -rf ${{ github.workspace }}/*
-
     - name: 'Azure OIDC login'
       uses: azure/login@v1
       with:
@@ -44,7 +40,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Initialize Terraform
-      working-directory: ./provision
+      working-directory: ./templates
       run: |
         terraform init \
           -backend-config="resource_group_name=theHerrickPerm" \
