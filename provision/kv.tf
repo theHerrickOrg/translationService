@@ -30,7 +30,7 @@ resource "azurerm_key_vault_secret" "gh_repo" {
 
 resource "azurerm_key_vault_secret" "gh_workflow" {
   name         = "ghworkflow"
-  value        = "template-provision.yaml"
+  value        = "126481082"
   key_vault_id = azurerm_key_vault.kv.id
 }
 
