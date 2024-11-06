@@ -21,6 +21,7 @@ jobs:
       TF_VAR_appinsights: translationserviceuksai
       TF_VAR_asp: translationserviceuksasp
       TF_VAR_fa: translationserviceuksfa
+      TF_VAR_keyfault: translationserviceukskv
 
     steps:
     - name: 'Azure OIDC login'
