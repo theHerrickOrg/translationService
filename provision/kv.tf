@@ -12,5 +12,5 @@ resource "azurerm_key_vault" "kv" {
 resource "azurerm_role_assignment" "fatokv" {
   scope                = azurerm_key_vault.kv.id
   role_definition_name = "Reader"
-  principal_id         = azurerm_linux_function_app.fa.identity.principal_id
+  principal_id         = azurerm_linux_function_app.fa.identity[0].principal_id
 }
