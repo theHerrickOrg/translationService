@@ -42,6 +42,7 @@ jobs:
           -backend-config="storage_account_name=theherrickpermsa" \
           -backend-config="container_name=statefiles" \
           -backend-config="key=translationService.tf" \
+          -reconfigure \
 
     - name: Apply Terraform changes
       working-directory: ./provision
