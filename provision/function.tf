@@ -28,10 +28,10 @@ resource "azurerm_linux_function_app" "fa" {
   }
 
   app_settings = {
-    "GH_TOKEN" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghtoken)"
-    "GH_OWNER" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghowner)"
-    "GH_REPO" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghrepo)"
-    "GH_WORKFLOW" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghworkflow)"
+    "GITHUB_TOKEN" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghtoken)"
+    "GITHUB_OWNER" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghowner)"
+    "GITHUB_REPO" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghrepo)"
+    "GITHUB_WORKFLOW" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghworkflow)"
   }
 
 }
