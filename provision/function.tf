@@ -21,6 +21,10 @@ resource "azurerm_linux_function_app" "fa" {
 
   site_config {
     application_insights_connection_string = azurerm_application_insights.appinsights.connection_string
+    always_on = true
+    application_stack {
+      node_version = "18"
+    }
   }
 
   app_settings = {
