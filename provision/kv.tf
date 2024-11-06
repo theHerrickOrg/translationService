@@ -12,7 +12,7 @@ resource "azurerm_key_vault" "kv" {
 resource "azurerm_role_assignment" "fatokv" {
   depends_on = [ azurerm_linux_function_app.fa, azurerm_key_vault.kv ]
   scope                = azurerm_key_vault.kv.id
-  role_definition_name = "Reader"
+  role_definition_name = "Key Vault Secrets User"
   principal_id         = azurerm_linux_function_app.fa.identity[0].principal_id
 }
 
