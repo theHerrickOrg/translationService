@@ -22,4 +22,12 @@ resource "azurerm_linux_function_app" "fa" {
   site_config {
     application_insights_connection_string = azurerm_application_insights.appinsights.connection_string
   }
+
+  app_settings = {
+    "GH_TOKEN" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghtoken)"
+    "GH_OWNER" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghowner)"
+    "GH_REPO" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghrepo)"
+    "GH_WORKFLOW" = "@Microsoft.KeyVault(SecretUri=https://translationserviceukskv.vault.azure.net/secrets/ghworkflow)"
+  }
+
 }
