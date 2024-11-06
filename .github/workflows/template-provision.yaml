@@ -39,9 +39,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Remove prior state config
+    - name: Clean Workspace
       run: |
-        ls
+        rm -rf ${{ github.workspace }}/*
 
     - name: Initialize Terraform
       working-directory: ./provision
