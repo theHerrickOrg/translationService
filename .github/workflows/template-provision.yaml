@@ -41,7 +41,7 @@ jobs:
 
     - name: Remove prior state config
       run: |
-        rm -r .terraform
+        ls
 
     - name: Initialize Terraform
       working-directory: ./provision
