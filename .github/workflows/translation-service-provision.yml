@@ -22,6 +22,7 @@ jobs:
       TF_VAR_asp: translationserviceuksasp
       TF_VAR_fa: translationserviceuksfa
       TF_VAR_keyvault: translationserviceukskv
+      TF_VAR_gh_token: ${{ secrets.GH_TOKEN }}
 
     steps:
     - name: 'Azure OIDC login'

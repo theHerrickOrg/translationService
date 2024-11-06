@@ -15,3 +15,27 @@ resource "azurerm_role_assignment" "fatokv" {
   role_definition_name = "Reader"
   principal_id         = azurerm_linux_function_app.fa.identity[0].principal_id
 }
+
+resource "azurerm_key_vault_secret" "gh_owner" {
+  name         = "gh_owner"
+  value        = "theHerrickOrg"
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+resource "azurerm_key_vault_secret" "gh_repo" {
+  name         = "gh_repo"
+  value        = "translationService"
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+resource "azurerm_key_vault_secret" "gh_workflow" {
+  name         = "gh_workflow"
+  value        = "template-provision.yaml"
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+resource "azurerm_key_vault_secret" "gh_token" {
+  name         = "gh_token"
+  value        = var.gh_token
+  key_vault_id = azurerm_key_vault.kv.id
+}

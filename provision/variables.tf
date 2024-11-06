@@ -30,3 +30,7 @@ variable "fa" {
 variable "keyvault" {
   type = string
 }
+
+variable "gh_token" {
+  type = string
+}
