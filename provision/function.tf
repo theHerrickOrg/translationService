@@ -16,7 +16,7 @@ resource "azurerm_linux_function_app" "fa" {
   service_plan_id            = azurerm_service_plan.asp.id
 
   identity {
-    type = SystemAssigned
+    type = "SystemAssigned"
   }
 
   site_config {
