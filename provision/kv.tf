@@ -17,25 +17,25 @@ resource "azurerm_role_assignment" "fatokv" {
 }
 
 resource "azurerm_key_vault_secret" "gh_owner" {
-  name         = "gh_owner"
+  name         = "ghowner"
   value        = "theHerrickOrg"
   key_vault_id = azurerm_key_vault.kv.id
 }
 
 resource "azurerm_key_vault_secret" "gh_repo" {
-  name         = "gh_repo"
+  name         = "ghrepo"
   value        = "translationService"
   key_vault_id = azurerm_key_vault.kv.id
 }
 
 resource "azurerm_key_vault_secret" "gh_workflow" {
-  name         = "gh_workflow"
+  name         = "ghworkflow"
   value        = "template-provision.yaml"
   key_vault_id = azurerm_key_vault.kv.id
 }
 
 resource "azurerm_key_vault_secret" "gh_token" {
-  name         = "gh_token"
+  name         = "ghtoken"
   value        = var.gh_token
   key_vault_id = azurerm_key_vault.kv.id
 }
